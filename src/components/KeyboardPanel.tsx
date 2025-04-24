@@ -1,10 +1,4 @@
-import {
-  useState,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-} from 'react'
+import { useState, useEffect, forwardRef } from 'react'
 import { View, Text } from '@tarojs/components'
 import './KeyboardPanel.scss'
 
@@ -98,7 +92,7 @@ const KEYBOARD_LETTERS = [
 ]
 
 const KeyboardPanel = forwardRef<any, KeyboardPanelProps>(
-  ({ onKeyClick, type = 'province', visible = false, onClose }, ref) => {
+  ({ onKeyClick, type = 'province', visible = false, onClose }) => {
     const [keyboardType, setKeyboardType] = useState<'province' | 'normal'>(
       type,
     )

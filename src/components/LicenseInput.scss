@@ -1,5 +1,4 @@
 .license-popup-content {
-  position: relative;
   background-color: #fff;
   width: 100%;
   display: flex;
@@ -47,6 +46,7 @@
       margin: 15px 0;
     }
 
+    // 车牌输入框
     .license-plate-input {
       display: flex;
       justify-content: space-between;
