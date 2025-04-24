@@ -1,0 +1,151 @@
+.keyboard-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+
+  .keyboard-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.slide-in {
+      opacity: 1;
+    }
+
+    &.slide-out {
+      opacity: 0;
+    }
+  }
+}
+
+.keyboard-panel {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1002;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  &.slide-in {
+    transform: translateY(0);
+  }
+
+  &.slide-out {
+    transform: translateY(100%);
+  }
+
+  .keyboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+
+    .keyboard-header-left {
+      text {
+        color: #333;
+        font-size: 14px;
+      }
+    }
+
+    .keyboard-header-right {
+      text {
+        color: #15d193;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 键盘容器
+  .keyboard-container {
+    position: relative;
+    width: 100%;
+    background-color: #d1d5db;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+    // 省份键盘
+    .province-keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-gap: 5px;
+      padding: 0 5px;
+
+      .key-item {
+        height: 45px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        color: #333;
+
+        &.delete {
+          grid-column: span 2;
+        }
+
+        &:active {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+
+    // 常规键盘
+    .normal-keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-gap: 5px;
+      padding: 0 5px;
+
+      .key-item {
+        height: 45px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        color: #333;
+
+        &.delete {
+          grid-column: span 2;
+        }
+
+        &:active {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
